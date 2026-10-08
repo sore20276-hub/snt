@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>سنتات</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif;color:#173f3b}
+body{background:linear-gradient(180deg,#fff 0%,#fbfdfc 55%,#f3f8f6 100%)}
+.page{width:min(690px,100%);min-height:100vh;margin:auto;padding:42px 34px 120px}
+.back{display:flex;justify-content:flex-start;align-items:center;gap:14px;color:#607975;font-size:22px;font-weight:700;margin-bottom:54px}
+.logo{height:112px;text-align:center;margin-bottom:31px;position:relative}
+.logo-en{font-family:Georgia,"Times New Roman",serif;font-size:76px;line-height:78px;font-weight:400;letter-spacing:-5px;color:#4fb4b0}
+.logo-ar{font-family:"Times New Roman",Tahoma,serif;font-size:25px;color:#243763;position:relative;top:-7px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.hero{text-align:center;margin-bottom:44px}
+.hero h1{font-size:35px;margin:0 0 17px;font-weight:800;color:#143c38}
+.hero p{margin:0;color:#758783;font-size:19px}
+.card{border:1px solid #d5dfdc;border-radius:22px;background:rgba(255,255,255,.82);padding:32px 34px 30px;box-shadow:0 7px 22px rgba(26,63,58,.035)}
+.tabs{height:74px;background:#e4f0ed;border-radius:22px;padding:6px;display:flex;margin-bottom:38px}
+.tabs button{flex:1;border:0;border-radius:19px;background:transparent;font-size:22px;font-weight:700;color:#687d79;cursor:pointer}
+.tabs button.active{background:#fff;color:#163e3a;box-shadow:0 7px 18px rgba(35,75,69,.08)}
+.field{margin-bottom:28px}
+.field label{display:block;font-size:21px;margin:0 0 9px;color:#1d4844}
+.input-wrap{height:61px;border:1px solid #d4dcda;border-radius:16px;background:#fff;display:flex;align-items:center;box-shadow:0 3px 8px rgba(0,0,0,.10);overflow:hidden}
+.input-wrap input{width:100%;height:100%;border:0;outline:0;background:transparent;padding:0 18px;font-size:20px;color:#173f3b}
+.eye{width:58px;text-align:center;font-size:24px;cursor:pointer;user-select:none}
+.primary{width:100%;height:68px;border:0;border-radius:18px;background:#4bb4af;color:#153d39;font-size:23px;cursor:pointer;box-shadow:0 5px 10px rgba(34,94,88,.12)}
+.or{display:flex;align-items:center;gap:18px;color:#70817d;font-size:18px;margin:30px 0}
+.or:before,.or:after{content:"";height:1px;background:#d2dcda;flex:1}
+.alt{width:100%;min-height:64px;border:1px solid #d3ddda;border-radius:19px;background:#f8fbfa;color:#183f3b;font-size:20px;font-weight:700;margin-bottom:16px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.06)}
+.alt.phone{background:#f0faf8;border-color:#cce8e3}
+.old{background:#f7fbfa}
+.forgot{display:block;margin:24px auto;border:0;background:transparent;color:#50aaa5;font-size:18px;text-decoration:underline;cursor:pointer}
+.secure{text-align:center;color:#71837f;font-size:16px;margin:30px 0 4px}
+.hidden{display:none!important}
+.country-btn{width:100%;height:61px;border:1px solid #d4dcda;border-radius:16px;background:#fff;padding:0 18px;display:flex;justify-content:space-between;align-items:center;font-size:19px;cursor:pointer}
+.country-list{max-height:250px;overflow:auto;border:1px solid #d5dfdc;border-radius:16px;background:#fff;margin-top:8px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.country-list button{width:100%;border:0;border-bottom:1px solid #edf1f0;background:#fff;padding:14px 16px;display:flex;justify-content:space-between;font-size:17px;cursor:pointer}
+.phone-row{direction:ltr}
+.phone-row .prefix{padding:0 15px;border-right:1px solid #dfe6e4;font-size:18px}
+.status{text-align:center;color:#55736e;font-size:15px;margin-top:14px}
+@media(max-width:600px){
+ .page{padding:28px 18px 90px}.back{font-size:20px;margin-bottom:42px}
+ .logo{height:100px;margin-bottom:24px}.logo-en{font-size:64px}.logo-ar{font-size:23px}
+ .hero h1{font-size:31px}.hero p{font-size:17px}.hero{margin-bottom:38px}
+ .card{padding:26px 20px}.tabs{height:68px}.tabs button{font-size:20px}
+ .field label{font-size:19px}.alt{font-size:18px}.primary{font-size:22px}
+}
+
+@media(min-width:900px){
+ body{background:#fbfdfc}
+ .page{width:690px;padding-top:42px}
+}
+
+.logo{height:auto!important;text-align:center!important;margin:0 auto 34px!important}
+.logo img{display:block;width:min(390px,78vw);height:auto;margin:0 auto;mix-blend-mode:multiply}
+.logo-en,.logo-ar{display:none!important}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="back"><span>→</span><span>العودة</span></div>
+
+  <div class="logo"><img src="sntat-logo.jpg" alt="SNTAT سنتات"></div>
+
+  <section class="hero">
+    <h1>أهلاً بعودتك</h1>
+    <p>مساحتك تبدأ من هنا</p>
+  </section>
+
+  <section class="card">
+    <div class="tabs">
+      <button id="signinTab" class="active" onclick="setTab('signin')">دخول</button>
+      <button id="signupTab" onclick="setTab('signup')">حساب جديد</button>
+    </div>
+
+    <div id="emailPanel">
+      <div id="nameField" class="field hidden">
+        <label>الاسم</label>
+        <div class="input-wrap"><input id="name" autocomplete="name"></div>
+      </div>
+
+      <div class="field">
+        <label>البريد الإلكتروني</label>
+        <div class="input-wrap"><input id="email" type="email" autocomplete="email"></div>
+      </div>
+
+      <div class="field">
+        <label>كلمة المرور</label>
+        <div class="input-wrap">
+          <span class="eye" onclick="togglePass('password')">◉</span>
+          <input id="password" type="password" autocomplete="current-password">
+        </div>
+      </div>
+
+      <button id="mainBtn" class="primary" onclick="localMessage()">دخول</button>
+
+      <div class="or"><span>أو</span></div>
+      <button class="alt phone" onclick="openPhone()">📱&nbsp;&nbsp; المتابعة عبر الهاتف</button>
+      <button class="alt" onclick="googleMessage()">المتابعة عبر Google</button>
+      <button class="alt old">لدي حساب سنتات قديم</button>
+      <button class="forgot">نسيت كلمة المرور؟</button>
+      <div class="secure">♢ &nbsp; دخول آمن وبيانات خاصة</div>
+    </div>
+
+    <div id="phonePanel" class="hidden">
+      <div class="field">
+        <label>الدولة</label>
+        <button class="country-btn" onclick="toggleCountries()">
+          <span id="countryName">🇮🇶 العراق</span><span id="countryCode">+964　⌄</span>
+        </button>
+        <div id="countryList" class="country-list hidden"></div>
+      </div>
+
+      <div class="field">
+        <label>رقم الهاتف</label>
+        <div class="input-wrap phone-row">
+          <span id="prefix" class="prefix">+964</span>
+          <input id="phone" inputmode="numeric" placeholder="7XXXXXXXXX">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>كلمة المرور</label>
+        <div class="input-wrap">
+          <span class="eye" onclick="togglePass('phonePassword')">◉</span>
+          <input id="phonePassword" type="password">
+        </div>
+      </div>
+
+      <button class="primary" onclick="localMessage()">دخول</button>
+      <button class="forgot" onclick="closePhone()">العودة للدخول بالبريد الإلكتروني</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </section>
+</main>
+
+<script>
+const countries=[
+ ['🇮🇶','العراق','+964'],['🇸🇦','السعودية','+966'],['🇰🇼','الكويت','+965'],
+ ['🇯🇴','الأردن','+962'],['🇦🇪','الإمارات','+971'],['🇶🇦','قطر','+974'],
+ ['🇧🇭','البحرين','+973'],['🇴🇲','عُمان','+968'],['🇪🇬','مصر','+20'],
+ ['🇹🇷','تركيا','+90'],['🇩🇪','ألمانيا','+49'],['🇫🇷','فرنسا','+33'],
+ ['🇬🇧','المملكة المتحدة','+44'],['🇺🇸','الولايات المتحدة','+1']
+];
+const list=document.getElementById('countryList');
+countries.forEach(c=>{
+ const b=document.createElement('button');
+ b.innerHTML='<span>'+c[0]+' '+c[1]+'</span><b>'+c[2]+'</b>';
+ b.onclick=()=>{countryName.textContent=c[0]+' '+c[1];countryCode.textContent=c[2]+'　⌄';prefix.textContent=c[2];list.classList.add('hidden')};
+ list.appendChild(b);
+});
+function setTab(tab){
+ signinTab.classList.toggle('active',tab==='signin');signupTab.classList.toggle('active',tab==='signup');
+ nameField.classList.toggle('hidden',tab!=='signup');mainBtn.textContent=tab==='signin'?'دخول':'إنشاء الحساب';
+}
+function openPhone(){emailPanel.classList.add('hidden');phonePanel.classList.remove('hidden');status.textContent=''}
+function closePhone(){phonePanel.classList.add('hidden');emailPanel.classList.remove('hidden');status.textContent=''}
+function toggleCountries(){list.classList.toggle('hidden')}
+function togglePass(id){const x=document.getElementById(id);x.type=x.type==='password'?'text':'password'}
+function localMessage(){status.textContent='الواجهة جاهزة. تسجيل الدخول الحقيقي يعمل بعد ربط بيانات Supabase على الاستضافة.'}
+function googleMessage(){status.textContent='تسجيل Google يحتاج تشغيل الموقع على HTTPS وربط Google في Supabase.'}
+</script>
+</body>
+</html>
